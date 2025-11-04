@@ -15,3 +15,45 @@
 заняты, покупатель ждет, пока хотя бы один освободится. Когда бургеры одного из видов
 заканчиваются, а покупатель хочет купить их, то покупатель зовет менеджера. Менеджер
 восполняет запас бургеров данного вида N штуками.
+
+## Структура проекта
+
+```
+MUCTR-Project/
+├── src/                    # Исходный код
+│   ├── main.cpp           # Точка входа
+│   └── core/              # Основные классы
+│       ├── BurgerInventory.h/cpp
+│       ├── TableManager.h/cpp
+│       ├── Manager.h/cpp
+│       ├── Customer.h/cpp
+│       └── Restaurant.h/cpp
+├── tests/                  # Тесты
+│   ├── TestFramework.h
+│   ├── test_main.cpp
+│   └── test_*.cpp
+├── docs/                   # Документация
+│   ├── ARCHITECTURE.md
+│   ├── FLOW_EXPLANATION.md
+│   └── TESTING.md
+├── build/                  # Результаты сборки (генерируется)
+├── Makefile
+├── README.md
+└── .gitignore
+```
+
+## Компиляция и запуск
+
+```bash
+make compile    # Компиляция основного приложения
+make run        # Запуск приложения
+make test       # Компиляция тестов
+make run-tests  # Запуск тестов
+make clean      # Очистка build/
+```
+
+## Документация
+
+- [Архитектура проекта](docs/ARCHITECTURE.md)
+- [Детальное объяснение работы кода](docs/FLOW_EXPLANATION.md)
+- [Руководство по тестированию](docs/TESTING.md)
