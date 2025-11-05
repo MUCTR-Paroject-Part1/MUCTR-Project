@@ -8,27 +8,27 @@
 
 ### Классы
 
-1. **BurgerInventory** (`BurgerInventory.h/cpp`)
+1. **BurgerInventory** (`src/core/BurgerInventory.h/cpp`)
    - Управление инвентарем трех типов бургеров
    - Thread-safe операции с использованием `std::mutex`
    - Callback для уведомления менеджера при окончании запаса
 
-2. **TableManager** (`TableManager.h/cpp`)
+2. **TableManager** (`src/core/TableManager.h/cpp`)
    - Управление 5 столиками
    - Использует `std::condition_variable` для ожидания свободных столиков
    - Thread-safe резервирование и освобождение столиков
 
-3. **Manager** (`Manager.h/cpp`)
+3. **Manager** (`src/core/Manager.h/cpp`)
    - Отдельный поток для пополнения инвентаря
    - Ожидает запросы через `std::condition_variable`
    - Пополняет запас бургеров при вызове
 
-4. **Customer** (`Customer.h/cpp`)
+4. **Customer** (`src/core/Customer.h/cpp`)
    - Поток-актор, представляющий покупателя
    - Покупает бургер, занимает столик, ест, освобождает столик
    - Вызывает менеджера при отсутствии нужного типа бургеров
 
-5. **Restaurant** (`Restaurant.h/cpp`)
+5. **Restaurant** (`src/core/Restaurant.h/cpp`)
    - Координирует все компоненты
    - Управляет жизненным циклом потоков
 
