@@ -1,0 +1,21 @@
+name: C++ Tests
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up C++
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y g++
+
+    - name: Compile and run tests
+      run: |
+        cd tests
+        g++ -std=c++20 -O2 test_main.cpp -o test_program
+        ./test_program
